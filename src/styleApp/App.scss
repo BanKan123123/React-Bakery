@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Nanum+Gothic:wght@400;700&family=Nunito:ital,wght@0,200;0,400;0,500;0,600;0,700;1,200;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,400;0,500;1,100;1,300;1,500;1,700&family=Rubik+Glitch&display=swap');
+
+html {
+    line-height: 2rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #4f46e5;
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    padding-left: 280px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    font-size:20px;
+}
+
+.ListDashBoards {
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    background-color: #0f172a;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .nameBoard {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 224px;
+        padding-left:10px;
+        height: 50px;
+        background-color: #0f172a;
+        color: #ccc;
+        margin: 0;
+        margin-top:10px;
+        border-radius: 7px;
+        gap: 10px;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #2c3344;
+            color: #fff;
+        }
+
+        i {
+            padding-left: 10px;
+        }
+    }
+}
+
+.authorDashBoards {
+    padding: 50px;
+
+    .authorHandel {
+        position: absolute;
+        right: 40px;
+
+        .inputAuthor {
+            height: 32px;
+            width: 170px;
+            border-radius: 3px;
+            border: 1.5px solid rgb(140, 140, 140);
+            padding-left: 10px;
+            font-size: 15px;
+            padding-right: 10px;
+            outline: none;
+            transition: 0.1s ease-in-out;
+
+            .active {
+                border: #EB1D36 1.2px solid;
+            }
+
+            &:focus {
+                border: 1.5px solid #333;
+            }
+        }
+
+        .btnAddAuthor {
+            min-width: 80px;
+            height: 36px;
+            margin-left: 10px;
+            padding: 0 10px;
+            border-radius: 4px;
+            background-color: #4f46e5;
+            color: #fff;
+            font-size: 15px;
+            position: relative;
+            right:10px;
+            box-shadow: 2px 4px 10px #ccc;
+            transition: 0.2s ease-in-out;
+            letter-spacing: 1px;
+
+            &:hover {
+                min-width: 108px;
+            }
+
+            &:active {
+                box-shadow: 0px 0px 2px #ccc;
+            }
+        }
+
+        .btnSaveAuthor {
+            min-width: 80px;
+            height: 36px;
+            margin-left: 10px;
+            border-radius: 4px;
+            background-color: #4f46e5;
+            color: #fff;
+            font-size: 13.7px;
+            position: relative;
+            top: -1px;
+            display: none;
+        }
+    }
+}
+
+@mixin iconCenter {
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.authorRender {
+    display: flex;
+    // flex-wrap: wrap;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #ECB390;
+
+    .authorTitle {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 2px solid #ECB390;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    .displayInfoAuthor {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 30%;
+
+        .authorData {
+            display: flex;
+            width: 100%;
+            height: 52px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .authorHandle {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 6%;
+        font-size: 16px;
+
+        .fa-pen-to-square {
+            @include iconCenter;
+            color: #4f46e5;
+        }
+
+        .fa-trash-can {
+            @include iconCenter;
+            color: rgb(237, 59, 59);
+
+        }
+    }
+}
+
+.editModel {
+    position: fixed;
+    right: 0;
+    lefT: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    .btnSaveAuthor {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.requiredAuthor {
+    color: #EB1D36;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bookData {
+    padding: 10px;
+}
+
+.modalAddBook {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 280px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    .formAddBook {
+        display: flex;
+        flex-flow: column;
+        width: 50%;
+        min-height: 75vh;
+        background-color: #fff;
+        padding: 50px;
+        gap: 15px;
+        border-radius: 10px;
+
+        input {
+            width: 95%;
+            height: 33px;
+            font-size: 16px;
+            padding: 0 11px;
+            font-size: 16px;
+        }
+
+        .checkBoxInputBook {
+            width: 18px;
+            height: 18px;
+        }
+
+        .btnAddNewBook {
+            position: absolute;
+            bottom: 16%;
+            right:30%;
+            height: 40px;
+            width: 200px;
+            border-radius: 5px;
+            background-color: #4f46e5;
+            font-size: 16px;
+            color: #fff;
+            box-shadow: 2px 4px 10px #ccc;
+            letter-spacing: 1px;
+            transition: 0.2s ease-in-out;
+            &:hover {
+                height:50px;
+                font-size:18px;
+            }
+
+            &:active {
+                box-shadow: 0px 0px 2px #ccc;
+            }
+        }
+
+        .imgUploadBook {
+            width: 150px;
+        }
+
+    }
+}
+.imgLoadBook {
+    width:52px;
+    height:52px;
+}
+
+.modalAddAuthor {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 280px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    .formAddAuthor {
+        width: 400px;
+        height: 170px;
+        display: flex;
+        flex-flow: column;
+        background-color: #fff;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        input {
+            width: 200px;
+            height: 33px;
+            border-radius: 4px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    }
+}
+
+.btnAddBook {
+    min-width: 80px;
+    height: 36px;
+    margin-left: 10px;
+    padding: 0 10px;
+    border-radius: 4px;
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 13.7px;
+    box-shadow: 2px 4px 10px #ccc;
+    transition: 0.2s ease-in;
+    letter-spacing: 1px;
+    position:absolute;
+    right:50px;
+    &:hover {
+        min-width: 112px;
+    }
+
+    &:active {
+        box-shadow: 0px 0px 2px #ccc;
+    }
+}
